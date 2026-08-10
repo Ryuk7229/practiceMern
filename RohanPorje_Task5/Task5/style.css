@@ -6,88 +6,96 @@
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  color: #2b2f38;
 }
 
-/* ---------- navbar ---------- */
-/* keeping this to display: inline / inline-block on purpose, no flex here yet */
+.container {
+  display: flex;
+  height: 100vh;
+}
 
-.navbar {
+
+.left-section {
+  flex: 1;
+  background: linear-gradient(135deg, #4dabf7, #1c7ed6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-section img {
+  width: 60%;
+  max-width: 350px;
+}
+
+
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #eaf4ff, #ffffff);
+  padding: 40px;
+}
+
+.form-box {
   width: 100%;
-  padding: 20px 60px;
-  border-bottom: 1px solid #eee;
+  max-width: 380px;
 }
 
-.logo {
-  display: inline;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.nav-links {
-  display: inline;
-  margin-left: 220px;
-}
-
-.nav-links a {
-  display: inline;
-  margin-right: 35px;
-  text-decoration: none;
+.form-box h1 {
+  font-size: 32px;
   color: #2b2f38;
-  font-size: 15px;
+  text-align: center;
 }
 
-.nav-links a:hover {
-  color: #1c7ed6;
-}
-
-.username {
-  display: inline;
-  float: right;
-  background: #e7f3ff;
-  color: #1c7ed6;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 14px;
-}
-
-/* ---------- hero section ---------- */
-
-.hero {
-  width: 100%;
-  height: 90vh;         /* viewport unit so it fits without scrolling */
-  padding: 0 60px;
-  overflow: hidden;
-}
-
-.hero-left {
-  width: 45%;
-  float: left;
-  margin-top: 8vh;
-}
-
-.hero-left h1 {
-  font-size: 42px;
-  line-height: 1.25;
-  color: #2b2f38;
-}
-
-.hero-left h1 span {
-  color: #1c7ed6;
-}
-
-.hero-left p {
-  margin-top: 20px;
-  font-size: 15px;
+.form-box > p {
+  margin-top: 8px;
+  margin-bottom: 30px;
   color: #6b7280;
-  line-height: 1.6;
-  max-width: 90%;
+  text-align: center;
+  font-size: 15px;
 }
 
-.cta-btn {
-  margin-top: 30px;
-  padding: 14px 30px;
-  background: #1c7ed6;
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 14px;
+  color: #2b2f38;
+  margin-bottom: 6px;
+}
+
+form input {
+  padding: 14px 16px;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+form input:focus {
+  border-color: #1c7ed6;
+}
+
+.forgot {
+  align-self: flex-end;
+  font-size: 13px;
+  color: #6b7280;
+  text-decoration: none;
+  margin-bottom: 25px;
+  margin-top: -10px;
+}
+
+.forgot:hover {
+  color: #1c7ed6;
+}
+
+form button {
+  padding: 15px;
+  background: linear-gradient(to right, #4dabf7, #1c7ed6);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -95,18 +103,22 @@ body {
   cursor: pointer;
 }
 
-.cta-btn:hover {
-  background: #1565c0;
+form button:hover {
+  opacity: 0.9;
 }
 
-.hero-right {
-  width: 50%;
-  float: right;
-  height: 80vh;
+.register {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
 }
 
-.hero-right img{
-  width: 80%;
-  display: block;
-  margin: auto;
+.register a {
+  color: #1c7ed6;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
 }
