@@ -20,3 +20,43 @@
 
 ## How to run
 Open `index.html` in any browser (no build step, no Bootstrap — plain HTML/CSS only).
+
+
+
+
+
+
+
+<!-- Box Model -->
+
+# Task3: CSS - Units, Box Models, Fonts
+
+## Files
+- `index.html` - document structure with an image container and button
+- `style.css` - external stylesheet (linked via `<link>`, no inline CSS)
+
+## Structure
+1. **HTML Setup** - proper `<!DOCTYPE html>`, `<head>` with title and linked
+   stylesheet.
+2. **Body Content** - a `.image-container` div holding an `<img>` and a
+   `<button class="cta-btn">Click Me</button>`.
+3. **CSS Styling**
+   - `.image-container` uses `width: 50%` with `margin: 10vh 25%`, giving
+     equal 25% spacing on the left/right and 10% (viewport-height based)
+     spacing on the top/bottom.
+   - Button has a left-to-right gradient background (`orange -> green`) with
+     custom font size, weight, and letter-spacing.
+   - `box-sizing: border-box` applied globally so padding/border never add
+     extra width/height.
+   - Image and button heights are set with `vh` (viewport) units and kept
+     within the viewport so the page does not scroll.
+4. **Final Steps**
+   - All tags are properly closed.
+   - No `flex` used anywhere.
+   - No `overflow: hidden` used.
+   - No `position: relative` or `position: absolute` used.
+   - `index.html` and `style.css` are in the same directory.
+
+## How to run
+Open `index.html` directly in a browser (requires an internet connection to
+load the sample image from Unsplash). No build step or dependencies needed.
