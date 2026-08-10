@@ -3,38 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>FreshFold Laundry</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="left-section">
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo">Logo</div>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
+
+      <div class="username">Username</div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1>
+          Revitalize Your Clothes with Expert <span>Laundry Services!</span>
+        </h1>
+        <p>
+          From premium dry cleaning to swift wash and fold, we deliver care and
+          convenience. Schedule a pickup and rediscover the freshness of your
+          clothes today!
+        </p>
+        <button class="cta-btn">Book a service today!</button>
+      </div>
+
+      <div class="hero-right">
         <img
           src="https://static.vecteezy.com/system/resources/previews/055/983/209/non_2x/modern-silver-washing-machine-with-digital-display-and-sleek-design-free-png.png"
-          alt="washing machine illustration"
+          alt="modern silver washing machine with digital display"
         />
       </div>
-
-      <div class="form-section">
-        <div class="form-box">
-          <h1>Hello Again!</h1>
-          <p>Welcome back! we missed you!</p>
-
-          <form>
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Emailid@site.com" />
-
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Password" />
-
-            <a href="#" class="forgot">Forgot Password</a>
-
-            <button type="submit">Login</button>
-
-            <p class="register">Not a member? <a href="#">Register Now</a></p>
-          </form>
-        </div>
-      </div>
-    </div>
+    </section>
   </body>
 </html>

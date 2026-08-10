@@ -6,96 +6,88 @@
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-.container {
-  display: flex;
-  height: 100vh;
-}
-
-
-.left-section {
-  flex: 1;
-  background: linear-gradient(135deg, #4dabf7, #1c7ed6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.left-section img {
-  width: 60%;
-  max-width: 350px;
-}
-
-
-.form-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to bottom, #eaf4ff, #ffffff);
-  padding: 40px;
-}
-
-.form-box {
-  width: 100%;
-  max-width: 380px;
-}
-
-.form-box h1 {
-  font-size: 32px;
   color: #2b2f38;
-  text-align: center;
 }
 
-.form-box > p {
-  margin-top: 8px;
-  margin-bottom: 30px;
-  color: #6b7280;
-  text-align: center;
+/* ---------- navbar ---------- */
+/* keeping this to display: inline / inline-block on purpose, no flex here yet */
+
+.navbar {
+  width: 100%;
+  padding: 20px 60px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  display: inline;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: inline;
+  margin-left: 220px;
+}
+
+.nav-links a {
+  display: inline;
+  margin-right: 35px;
+  text-decoration: none;
+  color: #2b2f38;
   font-size: 15px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-form label {
-  font-size: 14px;
-  color: #2b2f38;
-  margin-bottom: 6px;
-}
-
-form input {
-  padding: 14px 16px;
-  border: 1px solid #dfe3e8;
-  border-radius: 8px;
-  font-size: 14px;
-  margin-bottom: 20px;
-  outline: none;
-}
-
-form input:focus {
-  border-color: #1c7ed6;
-}
-
-.forgot {
-  align-self: flex-end;
-  font-size: 13px;
-  color: #6b7280;
-  text-decoration: none;
-  margin-bottom: 25px;
-  margin-top: -10px;
-}
-
-.forgot:hover {
+.nav-links a:hover {
   color: #1c7ed6;
 }
 
-form button {
-  padding: 15px;
-  background: linear-gradient(to right, #4dabf7, #1c7ed6);
+.username {
+  display: inline;
+  float: right;
+  background: #e7f3ff;
+  color: #1c7ed6;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* ---------- hero section ---------- */
+
+.hero {
+  width: 100%;
+  height: 90vh;         /* viewport unit so it fits without scrolling */
+  padding: 0 60px;
+  overflow: hidden;
+}
+
+.hero-left {
+  width: 45%;
+  float: left;
+  margin-top: 8vh;
+}
+
+.hero-left h1 {
+  font-size: 42px;
+  line-height: 1.25;
+  color: #2b2f38;
+}
+
+.hero-left h1 span {
+  color: #1c7ed6;
+}
+
+.hero-left p {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.cta-btn {
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #1c7ed6;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -103,22 +95,177 @@ form button {
   cursor: pointer;
 }
 
-form button:hover {
-  opacity: 0.9;
+.cta-btn:hover {
+  background: #1565c0;
 }
 
-.register {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 14px;
-  color: #6b7280;
+.hero-right {
+  width: 50%;
+  float: right;
+  height: 80vh;
 }
 
-.register a {
-  color: #1c7ed6;
-  text-decoration: none;
+.hero-right img{
+  width: 80%;
+  display: block;
+  margin: auto;
 }
 
-.register a:hover {
-  text-decoration: underline;
+
+
+/* =========================
+   Tablet View (768px - 1024px)
+   ========================= */
+@media screen and (max-width: 1024px) {
+
+  .navbar {
+    padding: 20px 30px;
+    text-align: center;
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+  }
+
+  .logo {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .nav-links {
+    display: block;
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+
+  .nav-links a {
+    margin: 0 15px;
+    font-size: 14px;
+  }
+
+  .username {
+    float: none;
+    display: inline-block;
+    
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px 30px;
+    display: flex;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    float: none;
+    text-align: left;
+  }
+
+  .hero-left {
+    margin-top: 0;
+  }
+
+  .hero-left h1 {
+    font-size: 34px;
+  }
+
+  .hero-left p {
+    max-width: 100%;
+    margin: 20px auto;
+    font-size: 15px;
+  }
+
+  .hero-right {
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .hero-right img {
+    width: 70%;
+  }
+
+  .cta-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+}
+
+
+/* =========================
+   Mobile View (up to 767px)
+   ========================= */
+@media screen and (max-width: 767px) {
+
+  .navbar {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .logo {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .nav-links {
+    display: none;
+    margin-left: 0;
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .username {
+    float: none;
+    display: inline-block;
+    margin-top: 0px;
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 30px 20px;
+    overflow: visible;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 100%;
+    margin: 18px auto;
+  }
+
+  .cta-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .hero-right {
+    height: auto;
+    margin-top: 25px;
+  }
+
+  .hero-right img {
+    width: 100%;
+    max-width: 320px;
+  }
 }
