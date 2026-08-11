@@ -9,13 +9,13 @@ body {
   color: #2b2f38;
 }
 
-/* ---------- navbar ---------- */
-/* keeping this to display: inline / inline-block on purpose, no flex here yet */
+
 
 .navbar {
   width: 100%;
   padding: 20px 60px;
   border-bottom: 1px solid #eee;
+  
 }
 
 .logo {
@@ -51,11 +51,10 @@ body {
   font-size: 14px;
 }
 
-/* ---------- hero section ---------- */
+
 
 .hero {
   width: 100%;
-  height: 90vh;         /* viewport unit so it fits without scrolling */
   padding: 0 60px;
   overflow: hidden;
 }
@@ -110,6 +109,61 @@ body {
   display: block;
   margin: auto;
 }
+
+
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  float: right;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #2b2f38;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100%;
+  background: #000;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding-top: 80px;
+  text-align: center;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin: 25px 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+}
+
 
 
 
@@ -268,4 +322,43 @@ body {
     width: 100%;
     max-width: 320px;
   }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .username {
+    float: right;
+    margin-right: 15px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    float: none;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+  }
+
+  .hero-right img {
+    width: 90%;
+    display: block;
+    margin: 20px auto 0;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+
 }

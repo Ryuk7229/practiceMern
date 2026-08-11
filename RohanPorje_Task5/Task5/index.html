@@ -19,7 +19,27 @@
       </div>
 
       <div class="username">Username</div>
+
+          <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="close-btn" onclick="toggleMenu()">&times;</span>
+
+  <a href="#" onclick="toggleMenu()">Home</a>
+  <a href="#" onclick="toggleMenu()">Services</a>
+  <a href="#" onclick="toggleMenu()">About Us</a>
+  <a href="#" onclick="toggleMenu()">Contact Us</a>
+</div>
     </nav>
+
+ 
 
     <section class="hero">
       <div class="hero-left">
@@ -43,3 +63,10 @@
     </section>
   </body>
 </html>
+
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
+</script>
