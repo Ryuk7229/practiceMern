@@ -7,27 +7,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- navbar -->
-
     <nav class="navbar">
       <a href="#" class="logo">Logo</a>
 
-      <input type="checkbox" id="menuCheckbox" class="menu-checkbox" />
-
-      <button class="cta-btn">Username</button>
-
-      <label for="menuCheckbox" class="menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">Service</a></li>
-        <li><a href="#">About US</a></li>
+        <li><a href="#">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
+
+      <div class="navbar-right">
+        <button class="cta-btn">Username</button>
+
+        <div class="menu-wrapper">
+          <button class="menu-toggle">
+            <span></span><span></span><span></span>
+          </button>
+
+          <!-- Mobile slide-in panel -->
+          <div class="mobile-panel">
+            <ul class="mobile-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="overlay"></div>
+        </div>
+      </div>
     </nav>
 
     <section class="hero">

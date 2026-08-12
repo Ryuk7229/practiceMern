@@ -1,13 +1,15 @@
 :root {
-  --bg: #12141a;
-  --surface: #181b23;
-  --text: #eef0f4;
-  --muted: #9aa0ae;
-  --accent: #5eead4;
-  --border: #262a34;
+  --surface: #fff;
+  --border: #eee;
+  --accent: #2b8fef;
+  --text: #1a1a1a;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 .navbar {
   position: sticky;
@@ -16,42 +18,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.9rem 2rem;
-  background: white;
-  
+  padding: 14px 32px;
+  background: #fff;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 20px;
   letter-spacing: -0.02em;
-  color: black;
+  color: #000;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.logo-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0c1013dd;
-  font-weight: 800;
-  font-size: 0.95rem;
-}
-
-/* Center nav links */
+/* center links, positioned absolute so they don't shift when the right side changes width */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 32px;
   list-style: none;
   position: absolute;
   left: 50%;
@@ -59,12 +46,12 @@
 }
 
 .nav-links a {
-  color: black;
+  position: relative;
+  color: #000;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 500;
   transition: color 0.2s ease;
-  position: relative;
 }
 
 .nav-links a:hover,
@@ -88,15 +75,21 @@
   width: 100%;
 }
 
-/* CTA button */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
 .cta-btn {
-   background: #e8f4fd;
+  background: #e8f4fd;
   color: #2b8fef;
   border: none;
-  padding: 0.55rem 1.3rem;
+  padding: 9px 21px;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 14px;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   flex-shrink: 0;
@@ -113,38 +106,95 @@
   outline-offset: 3px;
 }
 
-/* Hamburger (hidden on desktop) — pure CSS via checkbox hack */
-.menu-checkbox {
-  display: none;
+/* hamburger — :focus-within on the wrapper, no checkbox, no JS */
+.menu-wrapper {
+  position: relative;
 }
 
 .menu-toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
+  background: none;
+  border: none;
   cursor: pointer;
   padding: 6px;
 }
 
 .menu-toggle span {
-    width: 24px;
-    height: 2px;
-    background: black;
-    border-radius: 2px;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.menu-checkbox:checked ~ .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.menu-checkbox:checked ~ .menu-toggle span:nth-child(2) { opacity: 0; }
-.menu-checkbox:checked ~ .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-wrapper:focus-within .menu-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-wrapper:focus-within .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.menu-wrapper:focus-within .menu-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
+/* slide-in panel, capped width so it doesn't take over the whole screen */
+.mobile-panel {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background: #000;
+  z-index: 200;
+  padding: 80px 32px;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
 
+.mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-/* ---------- hero section ---------- */
+.mobile-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.menu-wrapper:focus-within .mobile-panel {
+  transform: translateX(0);
+}
+
+.menu-wrapper:focus-within .overlay {
+  display: block;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+}
+
+/* hero */
 
 .hero {
   width: 100%;
-  height: 90vh;         /* viewport unit so it fits without scrolling */
+  height: 90vh;
   padding: 0 60px;
   overflow: hidden;
 }
@@ -167,10 +217,10 @@
 
 .hero-left p {
   margin-top: 20px;
-  font-size: 15px;
-  color: #6b7280;
-  line-height: 1.6;
   max-width: 90%;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b7280;
 }
 
 .cta-btn-1 {
@@ -194,21 +244,20 @@
   height: 80vh;
 }
 
-.hero-right img{
-  width: 100%;
+.hero-right img {
   display: block;
+  width: 100%;
   margin: auto;
 }
 
-
-@media  (min-width: 768px) {
+@media (min-width: 768px) {
   .nav-links {
-    gap: 1.25rem;
+    gap: 20px;
   }
 
-.hero {
+  .hero {
     height: auto;
-    padding: 40px 40px;
+    padding: 40px;
   }
 
   .hero-left {
@@ -227,72 +276,26 @@
 
   .hero-right img {
     width: 70%;
-   
   }
-
-
 }
-
-
-
 
 @media (max-width: 767px) {
-
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
-    position: relative;
-}
-
+  .nav-links {
+    display: none;
+  }
 
   .menu-toggle {
     display: flex;
   }
 
-  .nav-links {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    transform: translateY(-150%);
-    opacity: 0;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-    padding: 0.5rem 2rem 1rem;
-  }
-
-  .menu-checkbox:checked ~ .nav-links {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .nav-links li {
-    width: 100%;
-  }
-
-  .nav-links a {
+  .mobile-panel {
     display: block;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-links a::after {
-    display: none;
   }
 
   .cta-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    padding: 8px 16px;
+    font-size: 13.6px;
   }
-
 
   .hero {
     height: auto;
@@ -315,10 +318,9 @@
     font-size: 14px;
   }
 
-  .cta-btn {
-    /* width: 100%; */
+  .cta-btn-1 {
+    width: 100%;
     padding: 14px 20px;
-    margin-left: 155px;
   }
 
   .hero-right {
