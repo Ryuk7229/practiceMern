@@ -1,0 +1,304 @@
+:root {
+  --surface: #fff;
+  --border: #eee;
+  --accent: #2b8fef;
+  --text: #1a1a1a;
+  --nav-height: 60px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--nav-height);
+  padding: 14px 32px;
+  background: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: #000;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--text);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  width: 100%;
+}
+
+.cta-btn {
+  background: #e8f4fd;
+  color: #2b8fef;
+  border: none;
+  padding: 9px 21px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  flex-shrink: 0;
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(94, 234, 212, 0.25);
+}
+
+.cta-btn:focus-visible,
+.nav-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #000;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger:focus span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger:focus span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger:focus span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.menu-list {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 280px;
+  height: calc(100vh - var(--nav-height));
+  background: #000;
+  padding: 24px 32px;
+  box-shadow: -4px 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hamburger:focus ~ .menu-list {
+  display: block;
+}
+
+.mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 100%;
+}
+
+.mobile-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.hero {
+  width: 100%;
+  height: 90vh;
+  padding: 0 60px;
+  overflow: hidden;
+}
+
+.hero-left {
+  width: 45%;
+  float: left;
+  margin-top: 8vh;
+}
+
+.hero-left h1 {
+  font-size: 42px;
+  line-height: 1.25;
+  color: #2b2f38;
+}
+
+.hero-left h1 span {
+  color: #1c7ed6;
+}
+
+.hero-left p {
+  margin-top: 20px;
+  max-width: 90%;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+.cta-btn-1 {
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #1c7ed6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.cta-btn-1:hover {
+  background: #1565c0;
+}
+
+.hero-right {
+  width: 50%;
+  float: right;
+  height: 80vh;
+}
+
+.hero-right img {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    gap: 20px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px;
+  }
+
+  .hero-left {
+    width: 55%;
+    margin-top: 4vh;
+  }
+
+  .hero-left h1 {
+    font-size: 34px;
+  }
+
+  .hero-right {
+    width: 45%;
+    height: 60vh;
+  }
+
+  .hero-right img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .cta-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    margin-left: 160px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .hero-left {
+    width: 100%;
+    float: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 26px;
+  }
+
+  .hero-left p {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .cta-btn-1 {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  .hero-right {
+    width: 100%;
+    float: none;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .hero-right img {
+    width: 70%;
+  }
+}
