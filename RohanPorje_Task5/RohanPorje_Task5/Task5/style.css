@@ -4,17 +4,13 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #2b2f38;
-}
-
 
 .navbar {
   width: 100%;
   padding: 20px 60px;
-  border-bottom: 1px solid #eee;
-  display: flex;
+  /* display flex is used for responsive purpose */
+  display: flex;   
+  
   justify-content: space-between;
 }
 
@@ -27,7 +23,8 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  
+  /* I have used links for navbar, so to remove the bullet points I have used list style none */
+  align-items: center;
 }
 
 .nav-links a {
@@ -40,8 +37,6 @@ body {
 
 
 .username {
-  display: inline;
-  float: right;
   background: #e7f3ff;
   color: #1c7ed6;
   padding: 8px 18px;
@@ -49,25 +44,23 @@ body {
   font-size: 14px;
 }
 
-/* ---------- hero section ---------- */
 
 .hero {
-  width: 100%;
-  height: 90vh;         /* viewport unit so it fits without scrolling */
+  width: 100%;  
   padding: 0 60px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  margin-top: 30px;
 }
 
 .hero-content {
   width: 45%;
-  margin-top: 8vh;
+  
 }
 
 .hero-content h1 {
   font-size: 42px;
-  line-height: 1.25;
   color: #2b2f38;
 }
 
@@ -79,7 +72,6 @@ body {
   margin-top: 20px;
   font-size: 15px;
   color: #6b7280;
-  line-height: 1.6;
   max-width: 90%;
 }
 
@@ -92,18 +84,20 @@ body {
   border-radius: 8px;
   font-size: 15px;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.5s ease;
+  /* transition delay of 0.5s is used for smooth transition */
 }
 
 .cta-btn:hover {
   background: #1565c0;
-  transform: scale(1.1) rotate(-3deg);
+  width: 210px;
+  transform: rotate(-5deg);
+  /* to inscrease the size of the button on hover I have inscreased its with and to rotate I have used transform */
   
 }
 
 .hero-image {
   width: 50%;
-  height: 80vh;
 }
 
 .hero-image img{
@@ -128,4 +122,60 @@ body {
     display: block;
     margin-top: 50px;
 }  
+
+.cta-btn {
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #1c7ed6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  /* transition delay of 0.5s is used for smooth transition */
+}
+
+.cta-btn:hover {
+  background: #1565c0;
+  width: 210px;
+  transform: rotate(-5deg);
+  /* to inscrease the size of the button on hover I have inscreased its with and to rotate I have used transform */
+  
+}
+}
+
+
+@media  (max-width: 767px) {
+
+  .navbar {
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: none;
+}
+
+.hero {
+    width: 100%;
+    height: 90vh;
+    padding: 0 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-content {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    margin-top: 20px;
+}
 }
