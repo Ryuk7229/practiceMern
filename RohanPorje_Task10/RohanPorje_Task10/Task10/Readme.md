@@ -1,0 +1,1 @@
+I have added index.html , style.css to this file. This task helped me learn about the keyframe animation.
