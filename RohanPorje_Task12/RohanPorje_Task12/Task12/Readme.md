@@ -1,0 +1,1 @@
+I have added index.html , style.css to this file. this task helped me build my confidence for building a landing page, It was difficult but some researched helped me.
