@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maps and Filters</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="greeting">Hi, <span>Username</span></div>
+      <button class="login-btn">Login</button>
+    </nav>
+
+    <section class="search-section">
+      <div style="width: 100%; max-width: 560px">
+        <div class="search-wrap">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by name, class,marks or address…"
+          />
+          <button id="searchBtn">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <main class="roster">
+      <div class="roster-heading">
+        <h2>Student Roster</h2>
+        <span id="resultCount"></span>
+      </div>
+      <div class="card-grid" id="cardGrid"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+ :root {
+    --ink: #1B2430;
+    --paper: #F6F4EF;
+    --panel: #FFFFFF;
+    --line: #E4E0D6;
+    --accent: #2F5D50;
+    --accent-soft: #E4EEE9;
+    --gold: #C08A3E;
+    --muted: #6B6459;
+    --radius: 10px;
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  }
+ 
+  * { box-sizing: border-box; }
+ 
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+ 
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background: var(--ink);
+    color: var(--paper);
+    border-bottom: 3px solid var(--gold);
+  }
+ 
+  .navbar .greeting {
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+  }
+ 
+  .navbar .greeting span {
+    color: var(--gold);
+    font-style: italic;
+  }
+ 
+  .login-btn {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--paper);
+    border: 1px solid var(--gold);
+    padding: 10px 22px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+ 
+  .login-btn:hover {
+    background: var(--gold);
+    color: var(--ink);
+  }
+ 
+
+  .search-section {
+    display: flex;
+    justify-content: center;
+    padding: 44px 20px 20px;
+  }
+ 
+  .search-wrap {
+    display: flex;
+    width: 100%;
+    max-width: 560px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px;
+    box-shadow: 0 2px 10px rgba(27, 36, 48, 0.05);
+  }
+ 
+  #searchInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--ink);
+    outline: none;
+  }
+ 
+  #searchInput::placeholder {
+    color: var(--muted);
+  }
+ 
+  #searchBtn {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+ 
+  #searchBtn:hover {
+    background: #24473d;
+  }
+ 
+  .search-hint {
+    text-align: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-top: 10px;
+  }
+ 
+  .roster {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 40px 70px;
+  }
+ 
+  .roster-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+  }
+ 
+  .roster-heading h2 {
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 600;
+  }
+ 
+  #resultCount {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+ 
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+ 
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    position: relative;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+ 
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(27, 36, 48, 0.08);
+  }
+ 
+  .card .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+ 
+  .card h3 {
+    margin: 0 0 4px;
+    font-size: 1.1rem;
+  }
+ 
+  .card .class-tag {
+    display: inline-block;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+ 
+  .card .detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    padding: 7px 0;
+    border-top: 1px dashed var(--line);
+  }
+ 
+  .card .detail-row:first-of-type {
+    border-top: none;
+  }
+ 
+  .detail-row .label {
+    color: var(--muted);
+  }
+ 
+  .detail-row .value {
+    font-weight: 600;
+  }
+ 
+  .marks-good { color: var(--accent); }
+  .marks-low { color: #B4483A; }
+ 
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-style: italic;
+    grid-column: 1 / -1;
+  }

@@ -1,0 +1,1 @@
+I used all the learning from the previous video and created a student dashboard. This task help me revise the HTML and CSS part as well.
