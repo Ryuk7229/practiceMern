@@ -1,1 +1,1 @@
-I tried using css pseudo-classes, positioning, and CSS animations for hamburger menu. Still there is lot to learn.
+As insturcted I have used focus on Hamburger Menu.
