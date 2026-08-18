@@ -1,37 +1,23 @@
-<!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maps and Filters</title>
+    <title>Student Dashboard</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="greeting">Hi, <span>Username</span></div>
-      <button class="login-btn">Login</button>
-    </nav>
+    <!-- top navbar -->
+    <div class="navbar">
+      <h2>Hi, Username</h2>
+      <button>Login</button>
+    </div>
 
-    <section class="search-section">
-      <div style="width: 100%; max-width: 560px">
-        <div class="search-wrap">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Search by name, class,marks or address…"
-          />
-          <button id="searchBtn">Search</button>
-        </div>
-      </div>
-    </section>
+    <!-- search bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by name" />
+      <button id="searchBtn">Search</button>
+    </div>
 
-    <main class="roster">
-      <div class="roster-heading">
-        <h2>Student Roster</h2>
-        <span id="resultCount"></span>
-      </div>
-      <div class="card-grid" id="cardGrid"></div>
-    </main>
+    <!-- student cards go here -->
+    <div id="cardContainer"></div>
 
     <script src="script.js"></script>
   </body>
