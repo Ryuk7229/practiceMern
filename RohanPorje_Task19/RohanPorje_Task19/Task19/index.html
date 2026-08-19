@@ -1,113 +1,98 @@
 <!doctype html>
 <html>
   <head>
-    <title>Service Booking</title>
+    <title>Service Booking App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- navbar -->
-    <div class="navbar">
+    <!-- Navigation -->
+    <nav>
       <div class="logo">Logo</div>
+
       <div class="nav-links">
         <a href="#">Home</a>
-        <a href="#">Services</a>
+        <a href="#services">Services</a>
         <a href="#">Contact Us</a>
         <a href="#">About Us</a>
       </div>
-      <div class="nav-right">
-        <span class="username-pill">Username</span>
-        <button id="logoutBtn">&#10148;</button>
+
+      <div class="user-area">
+        <span>Welcome, Rohan</span>
+        <button class="logout">Logout</button>
       </div>
-    </div>
+    </nav>
 
-    <div class="main-content">
-      <!-- left card -->
-      <div class="left-card">
-        <h3 class="card-title">Added Items</h3>
+    <div class="main-container">
+      <!-- LEFT SECTION -->
+      <div class="left-section">
+        <h2>Selected Services</h2>
 
-        <table id="cartTable">
-          <thead>
-            <tr>
-              <th>S.No</th>
-              <th>Service Name</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody id="cartTableBody">
-            <!-- rows get added here -->
-          </tbody>
-        </table>
-
-        <div id="emptyState">
-          <div class="info-icon">i</div>
-          <p class="empty-title">No Items Added</p>
-          <p class="empty-sub">Add items to the cart from the services bar</p>
+        <div id="cart-items">
+          <p id="empty-message">No items have been added yet.</p>
         </div>
 
-        <div class="total-row">
-          <span>Total Amount</span>
-          <span>&#8377; <span id="totalAmount">0</span></span>
+        <div class="total">
+          <h3>Total Amount</h3>
+          <h2>₹<span id="total">0</span></h2>
         </div>
 
-        <hr />
+        <!-- BOOKING FORM -->
 
-        <h3 class="card-title">Book Now</h3>
+        <div class="booking-form">
+          <h2>Book Now</h2>
 
-        <form id="bookingForm">
           <label>Full Name</label>
-          <input type="text" id="fullName" placeholder="John Doe" required />
+          <input type="text" id="name" placeholder="Enter your name" />
 
-          <div class="form-row">
-            <div>
-              <label>Email ID</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="mail@example.com"
-                required
-              />
-            </div>
-            <div>
-              <label>Phone Number</label>
-              <input type="text" id="phone" placeholder="0000000000" required />
-            </div>
-          </div>
+          <label>Email</label>
+          <input type="email" id="email" placeholder="Enter your email" />
 
-          <button type="submit" id="bookNowBtn" disabled>Book now</button>
+          <label>Password</label>
+          <input type="password" id="password" placeholder="Enter password" />
 
-          <p id="thankYouMsg">
-            Thank you for contacting, we will get back to you soon
-          </p>
-        </form>
+          <button id="book-button">Book Now</button>
+        </div>
       </div>
 
-      <!-- right card -->
-      <div class="right-card">
-        <h3 class="card-title">Browse Our Services</h3>
-        <p class="card-sub">
-          Click on the add to cart button to add the services to your cart or
-          press skip
-        </p>
+      <!-- RIGHT SECTION -->
 
-        <hr />
+      <div class="right-section" id="services">
+        <h2>Browse Our Services</h2>
 
-        <div class="service-box">
-          <img id="serviceImage" src="" alt="service" />
-          <div class="service-info-row">
-            <h3 id="serviceName"></h3>
-            <span id="servicePrice"></span>
-          </div>
+        <p>Choose a service and add it to your booking.</p>
 
-          <div class="service-buttons">
-            <button id="skipBtn">Skip Item &#8854;</button>
-            <button id="addBtn">Add Item &#8853;</button>
+        <!-- ONE SERVICE AT A TIME -->
+
+        <div class="service-card">
+          <img id="service-image" src="" alt="Service" />
+
+          <div class="service-info">
+            <h2 id="service-name"></h2>
+
+            <p id="service-description"></p>
+
+            <h3>₹<span id="service-price"></span></h3>
+
+            <div class="service-buttons">
+              <button id="skip-button">Skip Item</button>
+
+              <button id="add-button">Add Item</button>
+            </div>
           </div>
         </div>
 
-        <hr />
-        <p class="footer-note">
-          &#9432; Add the items to the cart and book now
-        </p>
+        <!-- CART OPTIONS -->
+
+        <div class="cart-options">
+          <h3>Add services to your cart</h3>
+
+          <p>Add the service you want and continue to the next service.</p>
+
+          <button id="add-cart">Add to Cart</button>
+
+          <button id="book-now">Book Now</button>
+        </div>
       </div>
     </div>
 
