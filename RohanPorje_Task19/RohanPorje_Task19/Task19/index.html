@@ -1,45 +1,42 @@
 <!doctype html>
 <html>
   <head>
-    <title>Service Booking App</title>
+    <title>Laundry Service Booking</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- Navigation -->
     <nav>
-      <div class="logo">Logo</div>
+      <div class="logo">LaundryCare</div>
 
-      <div class="nav-links">
+      <div class="links">
         <a href="#">Home</a>
         <a href="#services">Services</a>
-        <a href="#">Contact Us</a>
         <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
       </div>
 
-      <div class="user-area">
+      <div class="user">
         <span>Welcome, Rohan</span>
-        <button class="logout">Logout</button>
+        <button id="logout">Logout</button>
       </div>
     </nav>
 
-    <div class="main-container">
-      <!-- LEFT SECTION -->
-      <div class="left-section">
+    <div class="main">
+      <div class="left">
         <h2>Selected Services</h2>
 
-        <div id="cart-items">
-          <p id="empty-message">No items have been added yet.</p>
+        <div id="cart">
+          <p id="empty">No items have been added yet.</p>
         </div>
 
-        <div class="total">
+        <div class="total-box">
           <h3>Total Amount</h3>
+
           <h2>₹<span id="total">0</span></h2>
         </div>
 
-        <!-- BOOKING FORM -->
-
-        <div class="booking-form">
+        <div class="booking">
           <h2>Book Now</h2>
 
           <label>Full Name</label>
@@ -51,47 +48,33 @@
           <label>Password</label>
           <input type="password" id="password" placeholder="Enter password" />
 
-          <button id="book-button">Book Now</button>
+          <button id="bookingButton">Book Now</button>
         </div>
       </div>
 
-      <!-- RIGHT SECTION -->
-
-      <div class="right-section" id="services">
+      <div class="right" id="services">
         <h2>Browse Our Services</h2>
 
-        <p>Choose a service and add it to your booking.</p>
+        <p>Choose the laundry service you need.</p>
 
-        <!-- ONE SERVICE AT A TIME -->
+        <div class="service">
+          <img id="serviceImage" src="" alt="Laundry Service" />
 
-        <div class="service-card">
-          <img id="service-image" src="" alt="Service" />
+          <div class="serviceDetails">
+            <h2 id="serviceName"></h2>
 
-          <div class="service-info">
-            <h2 id="service-name"></h2>
+            <h3>₹<span id="servicePrice"></span></h3>
 
-            <p id="service-description"></p>
+            <div class="buttons">
+              <button id="skipButton">Skip Item</button>
 
-            <h3>₹<span id="service-price"></span></h3>
-
-            <div class="service-buttons">
-              <button id="skip-button">Skip Item</button>
-
-              <button id="add-button">Add Item</button>
+              <button id="addButton">Add Item</button>
             </div>
           </div>
         </div>
 
-        <!-- CART OPTIONS -->
-
-        <div class="cart-options">
-          <h3>Add services to your cart</h3>
-
-          <p>Add the service you want and continue to the next service.</p>
-
-          <button id="add-cart">Add to Cart</button>
-
-          <button id="book-now">Book Now</button>
+        <div class="cartOptions">
+          <p>Add the items to the cart and book now.</p>
         </div>
       </div>
     </div>

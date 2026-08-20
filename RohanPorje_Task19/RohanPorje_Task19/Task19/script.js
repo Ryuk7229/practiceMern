@@ -1,241 +1,258 @@
-// Services
 
-var services = [
-    {
-        name: "Dry Cleaning",
-        description: "Professional dry cleaning for clothes that need special care.",
-        price: 200,
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500"
-    },
 
-    {
-        name: "Ironing",
-        description: "Get your clothes neatly pressed and ready to wear.",
-        price: 100,
-        image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?w=500"
-    },
-
-    {
-        name: "Wedding Dress Cleaning",
-        description: "Special cleaning service to carefully clean and protect wedding dresses.",
-        price: 1000,
-        image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=500"
-    },
-
-    {
-        name: "Wash and Fold",
-        description: "Your clothes are washed, dried and neatly folded.",
-        price: 300,
-        image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=500"
-    },
-
-    {
-        name: "Stain Removal",
-        description: "Remove tough stains and bring your clothes back to life.",
-        price: 250,
-        image: "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=500"
-    }
+var serviceNames = [
+    "Dry Cleaning",
+    "Ironing",
+    "Wedding Dress Cleaning",
+    "Wash and Fold",
+    "Stain Removal",
+    "Leather & Suede Cleaning"
 ];
 
 
-// Current service number
+
+var servicePrices = [
+    200,
+    100,
+    1000,
+    300,
+    250,
+    700
+];
+
+
+
+
+var serviceImages = [
+    "Images/Dry Cleaning.png",
+    "Images/Ironing.png",
+    "Images/Wedding.png",
+    "Images/wash.png",
+    "Images/Stain.png",
+    "Images/Leather.png"
+];
+
+
+
 
 var currentService = 0;
-
-
-// Total price
 
 var totalAmount = 0;
 
 
-// Get elements
 
-var serviceName = document.getElementById("service-name");
-var serviceDescription = document.getElementById("service-description");
-var servicePrice = document.getElementById("service-price");
-var serviceImage = document.getElementById("service-image");
 
-var cartItems = document.getElementById("cart-items");
-var emptyMessage = document.getElementById("empty-message");
+var serviceImage = document.getElementById("serviceImage");
+
+var serviceName = document.getElementById("serviceName");
+
+var servicePrice = document.getElementById("servicePrice");
+
+var cart = document.getElementById("cart");
 
 var total = document.getElementById("total");
 
-var skipButton = document.getElementById("skip-button");
-var addButton = document.getElementById("add-button");
+var empty = document.getElementById("empty");
 
 
-// Show service
+
 
 function showService() {
 
-    var service = services[currentService];
+    serviceName.innerText = serviceNames[currentService];
 
-    serviceName.innerText = service.name;
 
-    serviceDescription.innerText = service.description;
 
-    servicePrice.innerText = service.price;
+    servicePrice.innerText =
+        servicePrices[currentService];
 
-    serviceImage.src = service.image;
-
+    serviceImage.src =
+        serviceImages[currentService];
 }
 
 
-// Show first service when page loads
+
 
 showService();
 
 
-// Skip button
 
-skipButton.addEventListener("click", function () {
+
+function nextService() {
 
     currentService = currentService + 1;
 
-    if (currentService >= services.length) {
+    if (currentService >= serviceNames.length) {
         currentService = 0;
     }
 
     showService();
+}
+
+
+
+var skipButton = document.getElementById("skipButton");
+
+skipButton.addEventListener("click", function () {
+
+    nextService();
 
 });
 
 
-// Add button
+
+
+var addButton = document.getElementById("addButton");
 
 addButton.addEventListener("click", function () {
 
-    var service = services[currentService];
+
+    empty.style.display = "none";
 
 
-    // Remove empty message
 
-    if (emptyMessage) {
-        emptyMessage.style.display = "none";
-    }
+    var newItem = document.createElement("div");
 
-
-    // Create cart item
-
-    var item = document.createElement("div");
-
-    item.className = "cart-item";
-
-    item.innerHTML =
-        "<span>" + service.name + "</span>" +
-        "<span>₹" + service.price + "</span>";
+    newItem.className = "cartItem";
 
 
-    // Add item to cart
 
-    cartItems.appendChild(item);
+    var nameText = document.createElement("span");
+
+    nameText.innerText =
+        serviceNames[currentService];
 
 
-    // Update total
 
-    totalAmount = totalAmount + service.price;
+    var priceText = document.createElement("span");
+
+    priceText.innerText =
+        "₹" + servicePrices[currentService];
+
+
+
+
+    var removeButton = document.createElement("button");
+
+    removeButton.innerText = "Remove";
+
+    removeButton.className = "removeButton";
+
+
+
+    newItem.appendChild(nameText);
+
+    newItem.appendChild(priceText);
+
+    newItem.appendChild(removeButton);
+
+
+ 
+
+    cart.appendChild(newItem);
+
+
+
+    totalAmount =
+        totalAmount + servicePrices[currentService];
 
     total.innerText = totalAmount;
 
 
-    // Move to next service
 
-    currentService = currentService + 1;
+    removeButton.addEventListener("click", function () {
 
-    if (currentService >= services.length) {
-        currentService = 0;
-    }
+        newItem.remove();
 
-    showService();
+        totalAmount =
+            totalAmount - servicePrices[currentService];
+
+        total.innerText = totalAmount;
+
+
+        if (cart.querySelector(".cartItem") == null) {
+            empty.style.display = "block";
+        }
+
+    });
+
+    nextService();
 
 });
 
 
-// Add to Cart button
 
-var addCartButton = document.getElementById("add-cart");
 
-addCartButton.addEventListener("click", function () {
+
+
+var bookingButton =
+    document.getElementById("bookingButton");
+
+bookingButton.addEventListener("click", function () {
+
+    var name =
+        document.getElementById("name").value;
+
+    var email =
+        document.getElementById("email").value;
+
+    var password =
+        document.getElementById("password").value;
+
+
+
+
+    if (name == "") {
+
+        alert("Please enter your name.");
+
+        return;
+    }
+
+    if (email == "") {
+
+        alert("Please enter your email.");
+
+        return;
+    }
+
+    if (password == "") {
+
+        alert("Please enter your password.");
+
+        return;
+    }
 
     if (totalAmount == 0) {
 
-        alert("Please add a service first.");
-
-    } else {
-
-        alert("Services are added to your cart.");
-
-    }
-
-});
-
-
-// Book Now button at bottom
-
-var bookNowButton = document.getElementById("book-now");
-
-bookNowButton.addEventListener("click", function () {
-
-    if (totalAmount == 0) {
-
-        alert("Please add a service first.");
-
-    } else {
-
-        alert("Please fill the booking form.");
-
-    }
-
-});
-
-
-// Booking form
-
-var bookButton = document.getElementById("book-button");
-
-bookButton.addEventListener("click", function () {
-
-    var name = document.getElementById("name").value;
-
-    var email = document.getElementById("email").value;
-
-    var password = document.getElementById("password").value;
-
-
-    if (name == "" || email == "" || password == "") {
-
-        alert("Please fill all the fields.");
+        alert("Please add a service.");
 
         return;
     }
 
 
-    if (totalAmount == 0) {
 
-        alert("Please add a service first.");
-
-        return;
-    }
-
-
-    // Booking successful
 
     alert(
         "Booking successful!\n" +
-        "Name: " + name + "\n" +
-        "Total: ₹" + totalAmount
+        "Thank You for contacting, we will get back to you soon."
     );
 
 
-    // Reset everything
+
 
     totalAmount = 0;
 
     total.innerText = 0;
 
 
-    cartItems.innerHTML =
-        '<p id="empty-message">No items have been added yet.</p>';
+
+    cart.innerHTML =
+        '<p id="empty">No items have been added yet.</p>';
+
+    empty =
+        document.getElementById("empty");
+
 
 
     document.getElementById("name").value = "";
@@ -245,7 +262,6 @@ bookButton.addEventListener("click", function () {
     document.getElementById("password").value = "";
 
 
-    // Go back to first service
 
     currentService = 0;
 
@@ -254,11 +270,11 @@ bookButton.addEventListener("click", function () {
 });
 
 
-// Logout
 
-var logoutButton = document.querySelector(".logout");
+var logout =
+    document.getElementById("logout");
 
-logoutButton.addEventListener("click", function () {
+logout.addEventListener("click", function () {
 
     alert("You have been logged out.");
 
