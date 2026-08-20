@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshFold Laundry</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Fresh<span>Fold</span></div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+
+      <div class="user-name">Rohan</div>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </nav>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-text">
+          <p class="small-title">YOUR CLOTHES, OUR CARE</p>
+          <h1>Fresh Clothes.<br /><span>Fresh Feeling.</span></h1>
+          <p>
+            Professional laundry and dry-cleaning services delivered with care.
+            Choose a service, add it to your cart, and book your pickup in
+            minutes.
+          </p>
+          <button class="primary-btn" id="heroBookBtn">
+            Book a Service Today
+          </button>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1000&q=80"
+            alt="Laundry service"
+          />
+        </div>
+      </section>
+
+      <section class="achievements" id="about">
+        <div>
+          <h2>15+</h2>
+          <p>Laundry Services</p>
+        </div>
+        <div>
+          <h2>240+</h2>
+          <p>Happy Customers</p>
+        </div>
+        <div>
+          <h2>2+</h2>
+          <p>Years of Experience</p>
+        </div>
+      </section>
+
+      <section class="booking-section" id="services">
+        <div class="services-list">
+          <p class="section-label">OUR SERVICES</p>
+          <h2>Choose your laundry services</h2>
+          <p class="section-description">
+            Add the services you need to your cart.
+          </p>
+
+          <div id="serviceContainer"></div>
+
+          <div class="cart-tip">
+            <strong>How it works</strong>
+            <p>
+              Add items to the cart, check your total, then enter your details
+              and book your service.
+            </p>
+          </div>
+        </div>
+
+        <div class="booking-right">
+          <div class="cart-box">
+            <h2>Your Cart</h2>
+            <div id="cartItems" class="cart-items">
+              <p class="empty-cart">No items added yet.</p>
+            </div>
+
+            <div class="total-row">
+              <span>Total Amount</span>
+              <strong>₹<span id="totalAmount">0</span></strong>
+            </div>
+          </div>
+
+          <div class="form-box">
+            <h2>Book Now</h2>
+
+            <form id="bookingForm">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                placeholder="Enter your full name"
+                required
+              />
+
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+
+              <button type="submit" class="primary-btn">Book Now</button>
+
+              <p id="bookingMessage" class="success-message"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="quality-section" id="quality">
+        <div class="section-heading">
+          <p class="section-label">WHY CHOOSE US</p>
+          <h2>Quality you can count on</h2>
+        </div>
+
+        <div class="quality-grid">
+          <div class="quality-card">
+            <div class="quality-icon">★</div>
+            <h3>Premium Services</h3>
+            <p>Careful cleaning and professional handling for your clothes.</p>
+          </div>
+
+          <div class="quality-card">
+            <div class="quality-icon">⚡</div>
+            <h3>Quick Support</h3>
+            <p>Our support team is ready to help whenever you need us.</p>
+          </div>
+
+          <div class="quality-card">
+            <div class="quality-icon">✓</div>
+            <h3>Timely Delivery</h3>
+            <p>We work hard to make sure your clothes reach you on time.</p>
+          </div>
+
+          <div class="quality-card">
+            <div class="quality-icon">₹</div>
+            <h3>Affordable Prices</h3>
+            <p>Simple pricing that gives you great value for your money.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div>
+          <p class="section-label">STAY UPDATED</p>
+          <h2>Subscribe to our newsletter</h2>
+          <p>Get updates, offers and laundry tips directly in your inbox.</p>
+        </div>
+
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="text" placeholder="Your full name" required />
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="primary-btn">Subscribe</button>
+        </form>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="footer-main">
+        <div>
+          <div class="logo">Fresh<span>Fold</span></div>
+          <p>Professional laundry care made simple.</p>
+        </div>
+
+        <div>
+          <h3>About Us</h3>
+          <a href="#about">Our Story</a>
+          <a href="#quality">Why Choose Us</a>
+        </div>
+
+        <div>
+          <h3>Important Links</h3>
+          <a href="#services">Services</a>
+          <a href="#home">FAQs</a>
+          <a href="#home">Terms of Service</a>
+        </div>
+
+        <div>
+          <h3>Contact Us</h3>
+          <a href="mailto:hello@freshfold.com">hello@freshfold.com</a>
+          <a href="tel:+919876543210">+91 98765 43210</a>
+
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">x</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 FreshFold Laundry. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
